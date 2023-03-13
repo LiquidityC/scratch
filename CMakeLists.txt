@@ -7,8 +7,8 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -fsanitize=address -fno-om
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -fsanitize=address -fno-omit-frame-pointer")
 set(CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fsanitize=address -fno-omit-frame-pointer")
 
-file(GLOB C_SOURCE_FILES src/*.c)
-file(GLOB CXX_SOURCE_FILES src/*.cpp)
+file(GLOB C_SOURCE_FILES CONFIGURE_DEPENDS src/*.c)
+file(GLOB CXX_SOURCE_FILES CONFIGURE_DEPENDS src/*.cpp)
 
 foreach(F IN LISTS C_SOURCE_FILES)
 	get_filename_component(EXENAME ${F} NAME_WE)
